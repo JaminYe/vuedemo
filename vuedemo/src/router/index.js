@@ -1,33 +1,20 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from '@/components/home.vue'
-import List from '@/components/list.vue'
+import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
+import Login from '@/views/Login.vue'
+import Main from '@/views/Main.vue'
+Vue.use(Router)
 
-
-Vue.use(Router);
 export default new Router({
-	routes: [{
-			path: "/",
-			name: '',
-			component: Home,
-			hidden: true
-		},
-		{
-			path: "/",
-			name: '用户管理',
-			component: Home,
-			hidden: true,
-			children: [{
-				path: 'list',
-				name: '列表',
-				compent:List,
-				meta: {
-					keepAlive: false
-				}
-			}]
-		}
-	]
-
-
-
+  routes: [{
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/main',
+      name: 'Main',
+      component: Main
+    }
+  ]
 })
