@@ -6,13 +6,12 @@
       <el-form-item label="密码" prop="password"><el-input type="password" placeholder="请输入密码" v-model="form.password" /></el-form-item>
       <el-form-item><el-button type="primary" @click="onSumbit('loginForm')">登陆</el-button></el-form-item>
     </el-form>
-    <el-dialog title="温馨提示" :visible.sync="dialogVisible" width="300%">
+    <el-dialog title="温馨提示" :visible.sync="dialogVisible" width="30%">
       <span>请输入账号和密码</span>
       <span slot="footer" class="dialog-footer"><el-button type="primary" @click="dialogVisible = false">确定</el-button></span>
     </el-dialog>
   </div>
 </template>
-
 <script>
 export default {
   name: 'Login',
@@ -26,7 +25,7 @@ export default {
       rules: {
         username: [
           {
-            require: true,
+            required: true,
             message: '账号不得为空',
             // 鼠标失去焦点触发
             tigger: 'blur'
@@ -34,7 +33,7 @@ export default {
         ],
         password: [
           {
-            require: true,
+            required: true,
             message: '密码不得为空',
             tigger: 'blur'
           }
